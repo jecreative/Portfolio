@@ -34,7 +34,7 @@ const Project = ({
           <a
             href={`${repo}`}
             target='_blank'
-            rel='norefferer'
+            rel='noreferrer'
             className='px-6 py-2 ml-1 text-white transition-all bg-yellow-600 border rounded-full hover:text-gray-800 hover:border-yellow-600 hover:bg-transparent'
           >
             <i className='fab fa-github'></i> Github
