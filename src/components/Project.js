@@ -1,3 +1,4 @@
+import Link from 'next/link'
 const Project = ({
   setShowModal,
   setProject,
@@ -31,14 +32,15 @@ const Project = ({
           >
             <i className='fal fa-info-circle'></i> Details
           </a>
-          <a
-            href={`${repo}`}
-            target='_blank'
-            rel='noreferrer'
-            className='px-6 py-2 ml-1 text-white transition-all bg-yellow-600 border rounded-full hover:text-gray-800 hover:border-yellow-600 hover:bg-transparent'
-          >
-            <i className='fab fa-github'></i> Github
-          </a>
+          <Link href={`${repo}`}>
+            <a
+              target='_blank'
+              rel='noreferrer'
+              className='px-6 py-2 ml-1 text-white transition-all bg-yellow-600 border rounded-full hover:text-gray-800 hover:border-yellow-600 hover:bg-transparent'
+            >
+              <i className='fab fa-github'></i> Github
+            </a>
+          </Link>
         </div>
       </>
     </div>

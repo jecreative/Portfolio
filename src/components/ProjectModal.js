@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const ProjectModal = ({
   showModal,
   setShowModal,
@@ -33,15 +35,15 @@ const ProjectModal = ({
               <h2 className='my-1 font-medium text-yellow-600'>{tech}</h2>
               <hr className='w-full mx-auto mt-1 mb-3 border border-gray-400' />
               <p className='mb-8 font-medium'>{description}</p>
-
-              <a
-                href={`${url}`}
-                traget='_blank'
-                rel='noreferrer'
-                className='px-8 py-3 ml-1 text-white transition-all bg-yellow-600 border rounded-full hover:text-gray-800 hover:border-yellow-600 hover:bg-transparent'
-              >
-                Visit Site
-              </a>
+              <Link href={`${url}`}>
+                <a
+                  target='_blank'
+                  rel='noreferrer'
+                  className='px-8 py-3 ml-1 text-white transition-all bg-yellow-600 border rounded-full hover:text-gray-800 hover:border-yellow-600 hover:bg-transparent'
+                >
+                  Visit Site
+                </a>
+              </Link>
             </div>
 
             {screenshots && (
