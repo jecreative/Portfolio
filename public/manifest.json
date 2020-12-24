@@ -1,0 +1,25 @@
+{
+  "short_name": "Jordan Esguerra",
+  "name": "Jordan Esguerra | Software Developer & Multimedia Designer",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#D9780A",
+  "background_color": "#F3F4F6"
+}
