@@ -57,7 +57,7 @@ const ProjectModal = ({
                     <img
                       src={screen}
                       alt='project'
-                      className='object-contain w-full p-4'
+                      className='object-contain object-top w-full p-4'
                       style={{ maxHeight: '800px' }}
                     />
                   </picture>
