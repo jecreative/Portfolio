@@ -57,8 +57,8 @@ const Contact = () => {
           Get In Touch
         </h1>
         <p className='my-3 text-lg md:mb-2 md:px-0'>
-          Contact me directly by email or phone or fill out the form below, and
-          I'll get back to you promptly.
+          Contact me directly by email or phone or fill out the form, and I'll
+          promptly get back to you.
         </p>
         <a
           href='tel:8582327090'
