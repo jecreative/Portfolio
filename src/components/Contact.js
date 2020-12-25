@@ -15,10 +15,12 @@ const Contact = () => {
     e.preventDefault()
     const formData = {
       name,
-      email,
+      email: email.split(' ').join(''),
       phone,
       message,
     }
+
+    console.log(email.split(' ').join(''))
     await Axios.post(
       'https://us-central1-portfolio-b9639.cloudfunctions.net/api/contact',
       formData
