@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Link } from 'react-scroll'
 import classNames from 'classnames'
@@ -7,6 +7,17 @@ import { useRouter } from 'next/router'
 const Header = () => {
   const router = useRouter()
   const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    }
+
+    if (!open) {
+      document.body.style.overflow = 'auto'
+    }
+  }, [open])
+
   return (
     <header id='header' className='w-screen max-w-full overflow-hidden'>
       {/* Preheader */}
@@ -130,7 +141,7 @@ const Header = () => {
       </nav>
       {/* Mobile Nav Toggle */}
       <button
-        className='absolute px-1 border-transparent rounded-full cursor-pointer right-10 focus:outline-none md:hidden'
+        className='absolute z-50 px-1 border-transparent rounded-full cursor-pointer right-10 focus:outline-none md:hidden'
         style={{ top: '4.75rem' }}
         onClick={() => setOpen(!open)}
       >
@@ -145,13 +156,36 @@ const Header = () => {
         id='mobile_nav'
         className={
           open
-            ? 'fixed w-screen transform bg-gray-800 opacity-100 h-screen md:hidden translate-x-0 transition-all duration-300 z-50 overflow-hidden'
-            : 'fixed w-screen transform translate-x-full bg-gray-800 opacity-100 h-screen md:hidden transition-all duration-300 z-50 overflow-hidden'
+            ? 'fixed w-screen transform bg-white opacity-100 h-screen top-0 md:hidden translate-x-0 transition-all duration-300 z-40 overflow-hidden p-6 pt-16'
+            : 'fixed w-screen transform translate-x-full bg-white opacity-0 top-0 h-screen md:hidden transition-all duration-300 z-40 overflow-hidden p-6 pt-16'
         }
       >
+        <div
+          id='logo'
+          className='flex items-center pb-6 text-lg font-black tracking-normal border-b border-gray-300 md:ml-0'
+        >
+          <Image
+            src='/images/logo.svg'
+            height={50}
+            width={50}
+            alt='Jordan Esguerra Logo'
+          />
+          <div className='flex flex-col ml-3'>
+            {' '}
+            <h1 className='uppercase cursor-default lg:block'>
+              Jordan Esguerra
+            </h1>
+            <a
+              href='mailto:jordanesguerra93@gmail.com'
+              className='text-xs text-gray-600'
+            >
+              jordanesguerra93@gmail.com
+            </a>
+          </div>
+        </div>
         <ul
           id='nav_links'
-          className='flex flex-col items-center justify-center text-3xl text-center text-gray-500 h-5/6'
+          className='flex flex-col items-start justify-start text-2xl text-center text-gray-800 h-5/6'
         >
           <Link
             to='home'
@@ -160,9 +194,10 @@ const Header = () => {
             duration={600}
             exact='true'
             offset={0}
-            className='flex items-center my-4 border-b border-transparent hover:border-gray-800 hover:text-gray-300'
+            className='flex items-center w-full pb-4 my-4 border-b border-transparent border-gray-300 hover:border-gray-800 hover:text-gray-300'
             onClick={() => setOpen(!open)}
           >
+            <i className='mr-5 fas fa-home'></i>
             Home
           </Link>
 
@@ -173,9 +208,10 @@ const Header = () => {
             duration={600}
             exact='true'
             offset={-45}
-            className='flex items-center my-4 border-b border-transparent hover:border-gray-800 hover:text-gray-300'
+            className='flex items-center w-full pb-4 border-b border-transparent border-gray-300 hover:border-gray-800 hover:text-gray-300'
             onClick={() => setOpen(!open)}
           >
+            <i className='mr-5 fas fa-info-circle'></i>
             About
           </Link>
 
@@ -186,9 +222,10 @@ const Header = () => {
             duration={600}
             exact='true'
             offset={50}
-            className='flex items-center my-4 border-b border-transparent hover:border-gray-800 hover:text-gray-300'
+            className='flex items-center w-full py-4 border-b border-transparent border-gray-300 hover:border-gray-800 hover:text-gray-300'
             onClick={() => setOpen(!open)}
           >
+            <i className='mr-5 fas fa-file-code'></i>
             Portfolio
           </Link>
 
@@ -199,9 +236,10 @@ const Header = () => {
             duration={600}
             exact='true'
             offset={0}
-            className='flex items-center my-4 border-b border-transparent hover:border-gray-800 hover:text-gray-300'
+            className='flex items-center w-full py-4 border-b border-transparent border-gray-300 hover:border-gray-800 hover:text-gray-300'
             onClick={() => setOpen(!open)}
           >
+            <i className='mr-5 fas fa-paper-plane'></i>
             Contact
           </Link>
         </ul>
