@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section
       id='about'
-      className='relative flex flex-col w-screen h-full px-4 mt-20 bg-center bg-no-repeat bg-cover md:bg-about-pattern md:h-screen sm:px-10 lg:px-16 xl:px-20 md:mt-0 md:flex-row '
+      className='relative flex flex-col w-screen h-full px-4 pt-10 mt-20 bg-center bg-no-repeat bg-cover md:pt-0 md:bg-about-pattern md:h-screen sm:px-10 lg:px-16 xl:px-20 md:mt-0 md:flex-row'
     >
       <div
         id='about_left'

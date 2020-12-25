@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Link } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll'
+import Link from 'next/link'
 import classNames from 'classnames'
 import { useRouter } from 'next/router'
 
@@ -78,7 +79,7 @@ const Header = () => {
           </h1>
         </div>
         <ul id='nav_links' className='items-center hidden h-full md:flex'>
-          <Link
+          <ScrollLink
             to='home'
             className={classNames(
               'grid h-full mx-4 cursor-pointer place-items-center hover:text-yellow-600',
@@ -88,9 +89,9 @@ const Header = () => {
             )}
           >
             Home
-          </Link>
+          </ScrollLink>
 
-          <Link
+          <ScrollLink
             to='about'
             spy={true}
             smooth={true}
@@ -100,9 +101,9 @@ const Header = () => {
             className='grid h-full mx-4 cursor-pointer place-items-center hover:text-yellow-600'
           >
             About
-          </Link>
+          </ScrollLink>
 
-          <Link
+          <ScrollLink
             to='services'
             spy={true}
             smooth={true}
@@ -112,21 +113,21 @@ const Header = () => {
             className='grid h-full mx-4 cursor-pointer place-items-center hover:text-yellow-600'
           >
             Services
-          </Link>
+          </ScrollLink>
 
-          <Link
+          <ScrollLink
             to='portfolio'
             spy={true}
             smooth={true}
             duration={600}
             exact='true'
-            offset={40}
+            offset={60}
             className='grid h-full mx-4 cursor-pointer place-items-center hover:text-yellow-600'
           >
             Portfolio
-          </Link>
+          </ScrollLink>
 
-          <Link
+          <ScrollLink
             to='contact'
             spy={true}
             smooth={true}
@@ -136,9 +137,9 @@ const Header = () => {
             className='grid py-2 ml-4 text-white transition-all bg-yellow-600 border-2 border-yellow-600 rounded-full cursor-pointer place-items-center px-7 hover:bg-transparent hover:text-yellow-600'
           >
             Hire Me
-          </Link>
+          </ScrollLink>
         </ul>
-      </nav>
+      </nav>{' '}
       {/* Mobile Nav Toggle */}
       <button
         className='absolute z-50 px-1 border-transparent rounded-full cursor-pointer right-10 focus:outline-none md:hidden'
@@ -187,60 +188,53 @@ const Header = () => {
           id='nav_links'
           className='flex flex-col items-start justify-start text-2xl text-center text-gray-800 h-5/6'
         >
-          <Link
-            to='home'
-            spy={true}
-            smooth={true}
-            duration={600}
-            exact='true'
-            offset={0}
-            className='flex items-center w-full pb-4 my-4 border-b border-transparent border-gray-300 hover:border-gray-800 hover:text-gray-300'
-            onClick={() => setOpen(!open)}
-          >
-            <i className='mr-5 fas fa-home'></i>
-            Home
+          <Link href='/#header'>
+            <a
+              onClick={() => setOpen(!open)}
+              className='flex items-center w-full pb-4 my-4 border-b border-transparent border-gray-300 hover:text-gray-300'
+            >
+              <i className='mr-5 fas fa-home'></i>Home
+            </a>
           </Link>
 
-          <Link
-            to='about'
-            spy={true}
-            smooth={true}
-            duration={600}
-            exact='true'
-            offset={-45}
-            className='flex items-center w-full pb-4 border-b border-transparent border-gray-300 hover:border-gray-800 hover:text-gray-300'
-            onClick={() => setOpen(!open)}
-          >
-            <i className='mr-5 fas fa-info-circle'></i>
-            About
+          <Link href='/#about'>
+            <a
+              onClick={() => setOpen(!open)}
+              className='flex items-center w-full pb-4 border-b border-transparent border-gray-300 hover:text-gray-300'
+            >
+              <i className='mr-5 fas fa-info-circle'></i>
+              About
+            </a>
           </Link>
 
-          <Link
-            to='portfolio'
-            spy={true}
-            smooth={true}
-            duration={600}
-            exact='true'
-            offset={50}
-            className='flex items-center w-full py-4 border-b border-transparent border-gray-300 hover:border-gray-800 hover:text-gray-300'
-            onClick={() => setOpen(!open)}
-          >
-            <i className='mr-5 fas fa-file-code'></i>
-            Portfolio
+          <Link href='/#services'>
+            <a
+              onClick={() => setOpen(!open)}
+              className='flex items-center w-full py-4 border-b border-transparent border-gray-300 hover:text-gray-300'
+            >
+              <i className='mr-5 fas fa-cogs'></i>
+              Services
+            </a>
           </Link>
 
-          <Link
-            to='contact'
-            spy={true}
-            smooth={true}
-            duration={600}
-            exact='true'
-            offset={0}
-            className='flex items-center w-full py-4 border-b border-transparent border-gray-300 hover:border-gray-800 hover:text-gray-300'
-            onClick={() => setOpen(!open)}
-          >
-            <i className='mr-5 fas fa-paper-plane'></i>
-            Contact
+          <Link href='/#portfolio'>
+            <a
+              onClick={() => setOpen(!open)}
+              className='flex items-center w-full py-4 border-b border-transparent border-gray-300 hover:text-gray-300'
+            >
+              <i className='mr-5 fas fa-file-code'></i>
+              Portfolio
+            </a>
+          </Link>
+
+          <Link href='/#contact'>
+            <a
+              onClick={() => setOpen(!open)}
+              className='flex items-center w-full py-4 border-b border-transparent border-gray-300 hover:text-gray-300'
+            >
+              <i className='mr-5 fas fa-paper-plane'></i>
+              Contact
+            </a>
           </Link>
         </ul>
       </nav>
