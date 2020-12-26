@@ -29,6 +29,19 @@ class MyDocument extends Document {
             rel='stylesheet'
             href='https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css'
           />
+          <script
+            async
+            src='https://www.googletagmanager.com/gtag/js?id=G-8V3CKB1XZX'
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+      window.dataLayer = window.dataLayer || []; function gtag()
+      {dataLayer.push(arguments)}
+      gtag('js', new Date()); gtag('config', 'G-8V3CKB1XZX');
+        `,
+            }}
+          />
         </Head>
         <body className='w-screen max-w-full overflow-x-hidden font-body'>
           <Main />
